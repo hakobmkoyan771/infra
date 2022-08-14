@@ -4,12 +4,16 @@ metadata:
   name: applications
 spec:
   destination:
-    server: https://192.168.59.105:8443
+    name: in-cluster
     namespace: applications
   project: default
   source:
     repoURL: https://github.com/hakobmkoyan771/infra.git
+<<<<<<< HEAD
     path: .
+=======
+    path: Applications
+>>>>>>> fb4383d8174cbaa469bb483eb5d78c1c11a438c9
     targetRevision: HEAD
   syncPolicy:
     automated:

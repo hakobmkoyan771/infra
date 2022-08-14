@@ -4,12 +4,12 @@ metadata:
   name: databases
 spec:
   destination:
-    server: https://192.168.59.105:8443
+    name: in-cluster
     namespace: applications
   project: default
   source:
     repoURL: https://github.com/hakobmkoyan771/infra.git
-    path: ./Databases
+    path: Databases
     targetRevision: HEAD
   syncPolicy:
     automated:
