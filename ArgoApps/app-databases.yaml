@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/hakobmkoyan771/infra.git
-    path: ./Databases
+    path: Databases
     targetRevision: HEAD
   syncPolicy:
     automated:
