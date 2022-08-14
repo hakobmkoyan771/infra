@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mongodb
+  labels:
+    dbapp: contacts
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      db: mongo
+  serviceName: mongosvcs
+  template:
+    metadata:
+      labels:
+        db: mongo
+    spec:
+      containers:
+        - name: mongodb
+          image: mongo
+          ports:
+            - name: mongoport
+              containerPort: 27017
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 27017
+            successThreshold: 1
+            failureThreshold: 3
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 27017
+            successThreshold: 1
+            failureThreshold: 3
+            periodSeconds: 10
+          imagePullPolicy: IfNotPresent
