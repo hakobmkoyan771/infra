@@ -1,1 +1,17 @@
-
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: databases
+spec:
+  destination:
+    server: https://192.168.59.105:8443
+    namespace: applications
+  project: default
+  source:
+    repoURL: https://github.com/hakobmkoyan771/infra.git
+    path: ./Databases
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
