@@ -20,9 +20,9 @@ spec:
               containerPort: 80
           env:
             - name: MONGO_DB_IP_ADDRESS
-              value: mongodb-svc.default.svc.cluster.local
+              value: mongodb-svc.webapps.svc.cluster.local
             - name: PING_IP_ADDRESS
-              value: pingserver-svc.default.svc.cluster.local
+              value: pingserver-svc.webapps.svc.cluster.local
           readinessProbe:
             httpGet:
               port: 80

@@ -20,7 +20,7 @@ spec:
               containerPort: 80
           env:
             - name: PICTO_SERVER_IP_ADDRESS
-              value: picto-svc.default.svc.cluster.local
+              value: picto-svc.webapps.svc.cluster.local
           readinessProbe:
             httpGet:
               port: 80
