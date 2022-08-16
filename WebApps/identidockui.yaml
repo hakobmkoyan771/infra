@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: identidock-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: identidock-ui
+  template:
+    metadata:
+      labels:
+        app: identidock-ui
+    spec:
+      containers:
+        - name: identidock-ui
+          image: hakobmkoyan771/identidockui:0.1.1
+          ports:
+            - name: identiui-http
+              containerPort: 80
+          env:
+            - name: MONGO_DB_IP_ADDRESS
+              value: mongodb-svc.webapps.svc.cluster.local
+            - name: PING_IP_ADDRESS
+              value: pingserver-svc.webapps.svc.cluster.local
+          readinessProbe:
+            httpGet:
+              port: 80
+              path: /
+            successThreshold: 1
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            failureThreshold: 2
+          livenessProbe:
+            httpGet:
+              port: 80
+              path: /
+            successThreshold: 1
+            initialDelaySeconds: 0
+            periodSeconds: 10
+            failureThreshold: 2
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: "70m"
+              memory: "100Mi"
+            limits:
+              cpu: "140m"
+              memory: "150Mi"

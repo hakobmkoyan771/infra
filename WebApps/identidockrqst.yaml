@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: identidock-requester
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: identidock-requester
+  template:
+    metadata:
+      labels:
+        app: identidock-requester
+    spec:
+      containers:
+        - name: identidock-requester
+          image: hakobmkoyan771/identidockrqst:0.1.0
+          ports:
+            - name: identirqst-http
+              containerPort: 80
+          env:
+            - name: PICTO_SERVER_IP_ADDRESS
+              value: picto-svc.webapps.svc.cluster.local
+          readinessProbe:
+            httpGet:
+              port: 80
+              path: /?email=test
+            successThreshold: 1
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            failureThreshold: 2
+          livenessProbe:
+            httpGet:
+              port: 80
+              path: /?email=test
+            successThreshold: 1
+            initialDelaySeconds: 0
+            periodSeconds: 10
+            failureThreshold: 2
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: "70m"
+              memory: "50Mi"
+            limits:
+              cpu: "140m"
+              memory: "100Mi"
