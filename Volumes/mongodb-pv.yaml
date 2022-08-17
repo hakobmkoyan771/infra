@@ -12,7 +12,7 @@ spec:
     storage: "100Mi"
   local:
     fsType: "ext4"
-    path: "/data/db"
+    path: "/data"
   nodeAffinity:
     required:
       nodeSelectorTerms:

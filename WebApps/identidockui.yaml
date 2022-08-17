@@ -28,7 +28,7 @@ spec:
               port: 80
               path: /
             successThreshold: 1
-            initialDelaySeconds: 60
+            initialDelaySeconds: 120
             periodSeconds: 10
             failureThreshold: 2
           livenessProbe:
