@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongodb-userlist-pvc
+spec:
+  accessModes:
+    - "ReadWriteMany"
+  resources:
+    limits:
+      storage: "100Mi"
+    requests:
+      storage: "50Mi"
+  storageClassName: ""
+  volumeName: mongodb-userlist-pv

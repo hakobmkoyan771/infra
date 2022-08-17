@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mongodb-userlist-pv
+  labels:
+    pv: mongodb-userlist-pv
+spec:
+  storageClassName: ""
+  accessModes:
+    - "ReadWriteMany"
+  capacity:
+    storage: "100Mi"
+  local:
+    fsType: "ext4"
+    path: "/data/db"
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: storage
+              operator: In
+              values:
+                - "true"

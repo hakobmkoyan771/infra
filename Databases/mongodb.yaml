@@ -35,4 +35,11 @@ spec:
             successThreshold: 1
             failureThreshold: 3
             periodSeconds: 10
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: mongodb-user-data
+              mountPath: /data/db
+      volumes:
+        - name: mongodb-user-data
+          persistentVolumeClaim:
+            claimName: mongodb-userlist-pvc

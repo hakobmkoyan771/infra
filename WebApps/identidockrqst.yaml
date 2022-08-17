@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: identidock-requester
-          image: hakobmkoyan771/identidockrqst:0.1.0
+          image: hakobmkoyan771/identidockrqst:0.2.0
           ports:
             - name: identirqst-http
               containerPort: 80
