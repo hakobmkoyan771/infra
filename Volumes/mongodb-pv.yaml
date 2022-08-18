@@ -13,3 +13,4 @@ spec:
   nfs:
     path: /var/nfs/kubedata
     server: 35.158.254.170
+  
