@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: identidock-ui
-          image: hakobmkoyan771/identidockui:0.2.0
+          image: hakobmkoyan771/identidockui:0.2.1
           ports:
             - name: identiui-http
               containerPort: 80
