@@ -10,14 +10,6 @@ spec:
     - "ReadWriteMany"
   capacity:
     storage: "100Mi"
-  local:
-    fsType: "ext4"
-    path: "/data"
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: storage
-              operator: In
-              values:
-                - "true"
+  nfs:
+    path: /var/nfs/kubedata
+    server: 35.158.254.170
