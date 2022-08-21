@@ -23,7 +23,7 @@ spec:
               port: 8080
               path: /monster/test?size=1
             successThreshold: 1
-            initialDelaySeconds: 10
+            initialDelaySeconds: 5
             periodSeconds: 5
             failureThreshold: 2
           livenessProbe:
@@ -31,7 +31,7 @@ spec:
               port: 8080
               path: /monster/test?size=1
             successThreshold: 1
-            initialDelaySeconds: 0
+            initialDelaySeconds: 15
             periodSeconds: 30
             failureThreshold: 2
           imagePullPolicy: IfNotPresent

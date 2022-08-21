@@ -12,6 +12,8 @@ spec:
       labels:
         app: identidock-ui
     spec:
+      imagePullSecrets:
+        - name: webapps-reg-secret
       containers:
         - name: identidock-ui
           image: hakobmkoyan771/identidockui:0.2.1

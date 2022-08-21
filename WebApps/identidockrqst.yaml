@@ -12,6 +12,8 @@ spec:
       labels:
         app: identidock-requester
     spec:
+      imagePullSecrets:
+        - name: webapps-reg-secret
       containers:
         - name: identidock-requester
           image: hakobmkoyan771/identidockrqst:0.2.1
@@ -26,16 +28,16 @@ spec:
               port: 80
               path: /?email=test
             successThreshold: 1
-            initialDelaySeconds: 30
-            periodSeconds: 10
+            initialDelaySeconds: 15
+            periodSeconds: 5
             failureThreshold: 2
           livenessProbe:
             httpGet:
               port: 80
               path: /?email=test
             successThreshold: 1
-            initialDelaySeconds: 0
-            periodSeconds: 10
+            initialDelaySeconds: 20
+            periodSeconds: 5
             failureThreshold: 2
           imagePullPolicy: Always
           resources:
