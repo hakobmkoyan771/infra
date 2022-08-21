@@ -8,5 +8,5 @@ spec:
   accessModes:
     - ReadWriteMany
   nfs:
-    path: /var/nfs/kubedata
+    path: /nfs/mongodb-pvc
     server: 35.158.254.170
