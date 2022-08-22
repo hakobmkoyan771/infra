@@ -9,4 +9,4 @@ spec:
     storage: 100Mi
   nfs:
     path: /nfs/mongodb-pvc
-    server: 40.113.99.83
+    server: 18.184.152.96
