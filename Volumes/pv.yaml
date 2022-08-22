@@ -8,5 +8,5 @@ spec:
   capacity:
     storage: 100Mi
   nfs:
-    path: /var/nfs/kubedata
+    path: "/nfs/mongodb-pvc"
     server: 23.97.224.170
