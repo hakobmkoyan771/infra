@@ -9,4 +9,4 @@ spec:
     - ReadWriteMany
   nfs:
     path: /nfs/mongodb-pvc
-    server: 35.158.254.170
+    server: 3.72.241.128
