@@ -26,6 +26,7 @@ spec:
               path: /
               port: 27017
             successThreshold: 1
+            initialDelaySeconds: 10
             failureThreshold: 3
             periodSeconds: 10
           livenessProbe:
@@ -33,6 +34,7 @@ spec:
               path: /
               port: 27017
             successThreshold: 1
+            initialDelaySeconds: 40
             failureThreshold: 3
             periodSeconds: 10
           imagePullPolicy: Always
