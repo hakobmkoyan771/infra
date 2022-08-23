@@ -9,4 +9,4 @@ spec:
     storage: 100Mi
   nfs:
     path: /var/nfs/kubedata
-    server: 18.185.89.59
+    server: 3.68.115.172
