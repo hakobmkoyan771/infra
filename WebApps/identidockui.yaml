@@ -30,16 +30,16 @@ spec:
               port: 80
               path: /
             successThreshold: 1
-            initialDelaySeconds: 60
-            periodSeconds: 10
+            initialDelaySeconds: 30
+            periodSeconds: 5
             failureThreshold: 2
           livenessProbe:
             httpGet:
               port: 80
               path: /
             successThreshold: 1
-            initialDelaySeconds: 80
-            periodSeconds: 1
+            initialDelaySeconds: 45
+            periodSeconds: 5
             failureThreshold: 1
           imagePullPolicy: Always
           resources:
