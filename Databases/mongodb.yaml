@@ -46,9 +46,4 @@ spec:
       volumes:
         - name: mongodb-user-data
           persistentVolumeClaim:
-            claimName: mongodb-userlist-pvc       
-
-
-
-
-
+            claimName: mongodb-userlist-pvc
