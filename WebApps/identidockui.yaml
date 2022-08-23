@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: identidock-ui
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: identidock-ui
@@ -30,7 +30,7 @@ spec:
               port: 80
               path: /
             successThreshold: 1
-            initialDelaySeconds: 20
+            initialDelaySeconds: 60
             periodSeconds: 5
             failureThreshold: 2
           livenessProbe:
@@ -38,7 +38,7 @@ spec:
               port: 80
               path: /
             successThreshold: 1
-            initialDelaySeconds: 40
+            initialDelaySeconds: 70
             periodSeconds: 5
             failureThreshold: 2
           imagePullPolicy: Always
