@@ -26,17 +26,16 @@ spec:
               path: /
               port: 27017
             successThreshold: 1
-            initialDelaySeconds: 10
-            failureThreshold: 3
-            periodSeconds: 10
+            failureThreshold: 2
+            periodSeconds: 5
           livenessProbe:
             httpGet:
               path: /
               port: 27017
             successThreshold: 1
-            initialDelaySeconds: 40
-            failureThreshold: 3
-            periodSeconds: 10
+            failureThreshold: 2
+            initialDelaySeconds: 20
+            periodSeconds: 5
           imagePullPolicy: Always
           volumeMounts:
             - name: mongodb-user-data
