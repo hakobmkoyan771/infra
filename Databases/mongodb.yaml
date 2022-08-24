@@ -5,7 +5,7 @@ metadata:
   labels:
     dbapp: contacts
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       db: mongo

@@ -16,7 +16,7 @@ spec:
         - name: webapps-reg-secret
       containers:
         - name: identidock-ui
-          image: hakobmkoyan771/identidockui:0.2.1
+          image: hakobmkoyan771/identidockui:0.3.1
           ports:
             - name: identiui-http
               containerPort: 80
@@ -39,7 +39,7 @@ spec:
               path: /registration
             successThreshold: 1
             initialDelaySeconds: 45
-            periodSeconds: 5
+            periodSeconds: 10
             failureThreshold: 2
           imagePullPolicy: Always
           resources:

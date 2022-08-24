@@ -16,7 +16,7 @@ spec:
         - name: webapps-reg-secret
       containers:
         - name: identidock-requester
-          image: hakobmkoyan771/identidockrqst:0.2.1
+          image: hakobmkoyan771/identidockrqst:0.2.2
           ports:
             - name: identirqst-http
               containerPort: 80
