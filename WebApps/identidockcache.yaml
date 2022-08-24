@@ -16,7 +16,7 @@ spec:
         - name: webapps-reg-secret
       containers:
         - name: identidock-cacher
-          image: hakobmkoyan771/identidockcache:0.2.4
+          image: hakobmkoyan771/identidockcache:0.2.5
           ports:
             - name: cachingport
               containerPort: 80
