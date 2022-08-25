@@ -7,6 +7,10 @@ spec:
   selector:
     matchLabels:
       app: identidock-ui
+  strategy:
+    rollingUpdate:
+      maxSurge: "25%"
+      maxUnavailable: "25%"
   template:
     metadata:
       labels:
