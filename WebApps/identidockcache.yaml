@@ -7,6 +7,10 @@ spec:
   selector:
     matchLabels:
       app: identidock-cacher
+  strategy:
+    rollingUpdate:
+      maxSurge: "100%"
+      maxUnavailable: "0%"
   template:
     metadata:
       labels:
