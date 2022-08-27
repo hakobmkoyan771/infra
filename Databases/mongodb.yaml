@@ -9,7 +9,7 @@ spec:
   selector:
     matchLabels:
       db: mongo
-  serviceName: mongodb-svc
+  serviceName: mongodb-headless
   template:
     metadata:
       labels:
@@ -27,7 +27,7 @@ spec:
                 - "/usr/bin/pgrep"
                 - "mongo"
             failureThreshold: 2
-            initialDelaySeconds: 10
+            initialDelaySeconds: 240
             successThreshold: 1
             periodSeconds: 5
           livenessProbe:

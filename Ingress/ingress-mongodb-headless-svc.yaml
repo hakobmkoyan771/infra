@@ -1,0 +1,11 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-mongodb-headless-svc
+spec:
+  ingressClassName: nginx
+  defaultBackend:
+    service:
+      name: mongodb-headless
+      port:
+        number: 27017
