@@ -45,7 +45,7 @@ spec:
             initialDelaySeconds: 45
             periodSeconds: 10
             failureThreshold: 2
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           resources:
             requests:
               cpu: "70m"
@@ -53,3 +53,4 @@ spec:
             limits:
               cpu: "140m"
               memory: "150Mi"
+      restartPolicy: Always
