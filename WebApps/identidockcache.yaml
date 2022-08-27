@@ -26,7 +26,7 @@ spec:
               containerPort: 80
           env:
             - name: MONGO_DB_IP_ADDRESS
-              value: ingress-mongodb-headless-svc-controller.webapps.svc.cluster.local
+              value: nginx-ingress-ingress-nginx-controller.webapps.svc.cluster.local
               #value: mongodb-svc.webapps.svc.cluster.local
           readinessProbe:
             httpGet:
