@@ -3,7 +3,6 @@ kind: Service
 metadata:
   name: mongodb-svc
 spec:
-  #type: ClusterIP
   clusterIP: None
   ports:
     - port: 27017
