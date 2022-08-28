@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: mongodb
-  labels:
-    dbapp: contacts
 spec:
   replicas: 1
   selector:
