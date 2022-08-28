@@ -4,12 +4,8 @@ metadata:
   name: ingress-mongodb-headless-svc
 spec:
   ingressClassName: nginx
-  rules:
-    - http:
-        paths:
-          - pathType: Exact
-            path: /
-            backend:
-              service:
-                name: mongodb-headless
-                number: 27017
+  defaultBackend:
+    service:
+      name: mongodb-headless
+      port:
+        number: 27017
