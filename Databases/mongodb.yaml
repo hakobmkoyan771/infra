@@ -37,10 +37,3 @@ spec:
             initialDelaySeconds: 20
             successThreshold: 1
             periodSeconds: 5
-#          volumeMounts:
-#            - name: mongodb-user-data
-#              mountPath: /data/db
-#      volumes:
-#        - name: mongodb-user-data
-#          persistentVolumeClaim:
-#            claimName: mongodb-userlist-pvc
