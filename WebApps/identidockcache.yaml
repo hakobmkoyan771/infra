@@ -20,15 +20,13 @@ spec:
         - name: webapps-reg-secret
       containers:
         - name: identidock-cacher
-          image: hakobmkoyan771/identidockcache:5.0.1
-          #image: hakobmkoyan771/identidockcache:0.2.7
+          image: hakobmkoyan771/identidockcache:0.2.7
           ports:
             - name: cachingport
               containerPort: 80
           env:
             - name: MONGO_DB_IP_ADDRESS
-              value: nginx-ingress-ingress-nginx-controller.webapps.svc.cluster.local
-              #value: mongodb-svc.webapps.svc.cluster.local
+              value: mongodb-svc.webapps.svc.cluster.local
           readinessProbe:
             httpGet:
               port: 80
